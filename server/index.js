@@ -58,7 +58,7 @@ app.delete('/people/:id', (req, res, next) => {
 })
 
 
-db.sync()
+db.sync({force: true})
 .then(() => {
     app.listen(app.get('port'), function() {
         console.log('Server listening on port', app.get('port'))
