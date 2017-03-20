@@ -5,7 +5,7 @@ const Person = db.model('person')
 
 var bodyParser = require('body-parser')
 
-app.set('port', (process.env.PORT || 3000));
+const port = process.env.PORT || 3000
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
@@ -60,8 +60,8 @@ app.delete('/people/:id', (req, res, next) => {
 
 db.sync({force: true})
 .then(() => {
-    app.listen(app.get('port'), function() {
-        console.log('Server listening on port', app.get('port'))
+    app.listen(port, function() {
+        console.log('Server listening on port', port)
     })
 })
 .catch(console.error)
