@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 app.get('/', (req, res, next) =>  {
-   res.send('Home page for Spotify Challenge')
+   res.send('Spotify Fellowship Challenge Zain Nadeem')
 })
 
 app.get("/people", (req, res, next) => {
