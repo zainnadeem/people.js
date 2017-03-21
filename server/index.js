@@ -10,6 +10,10 @@ const port = process.env.PORT || 3000
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
+app.get('/', (req, res, next) =>  {
+   res.send('Home page for Spotify Challenge')
+})
+
 app.get("/people", (req, res, next) => {
     //retrieve all users 
     Person.findAll()
